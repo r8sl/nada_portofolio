@@ -466,6 +466,34 @@ body {
     transition: var(--transition-smooth);
 }
 
+/* Keep a usable poster area even while an image loads or fails. */
+.portfolio-card .card-image {
+    background: linear-gradient(135deg, #121212, #301515);
+}
+
+.portfolio-card .card-image::before {
+    content: 'Play video';
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    color: var(--text-gray);
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.portfolio-card .portfolio-poster {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+}
+
+.portfolio-card .portfolio-poster.is-loaded {
+    opacity: 1;
+}
 .portfolio-card:hover .card-image img {
     transform: scale(1.1);
 }

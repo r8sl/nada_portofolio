@@ -111,6 +111,17 @@ function initVideoModal() {
 // ========================================
 // PORTFOLIO FILTER
 // ========================================
+// Reveal only successfully decoded posters; failures leave the CSS fallback visible.
+function initPortfolioPosters() {
+    document.querySelectorAll('.portfolio-poster').forEach(poster => {
+        const updatePoster = () => {
+            poster.classList.toggle('is-loaded', poster.complete && poster.naturalWidth > 0);
+        };
+        poster.addEventListener('load', updatePoster);
+        poster.addEventListener('error', () => poster.classList.remove('is-loaded'));
+        updatePoster();
+    });
+}
 function initPortfolioFilter() {
     elements.filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -274,6 +285,7 @@ function init() {
     
     initNavigation();
     initVideoModal();
+    initPortfolioPosters();
     initPortfolioFilter();
     initTimeline();
     initSmoothScroll();
