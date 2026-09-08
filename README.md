@@ -39,17 +39,6 @@ nada_portofolio/
 
 This portfolio was created to provide a unique, engaging way for Nada Mujahed Tawfeek to present his video editing work to potential clients. The timeline interface reflects his profession while offering an intuitive navigation experience that sets him apart from traditional portfolio websites.
 
-## 👨‍💻 Developer
-
-**Malik Obaid Ur Rehman**  
-Full Stack Developer
-
-Developed as a custom portfolio solution combining modern web technologies with creative design to deliver an exceptional user experience.
-
-## 📧 Contact
-
-- **Phone**: +92 318 0820279
-
 ---
 
 © 2026 Nada Mujahed Tawfeek Portfolio. All rights reserved.
