@@ -624,39 +624,100 @@ body {
     background: var(--bg-dark);
 }
 
-.tools-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 20px;
+.tools-marquee {
+    overflow: hidden;
+    padding: 32px 0;
+    user-select: none;
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
 }
 
-.tool-card {
-    background: var(--bg-section);
-    padding: 30px 20px;
-    border-radius: var(--card-radius);
-    border: 1px solid var(--border-gray);
-    text-align: center;
-    transition: var(--transition-smooth);
+.tools-marquee:focus-visible {
+    outline: 2px solid var(--primary-red);
+    outline-offset: 4px;
+}
+
+.tools-marquee-track {
     display: flex;
-    flex-direction: column;
+    width: max-content;
+    animation: tools-marquee-scroll 25s linear infinite;
+}
+
+.tools-marquee-group {
+    display: flex;
     align-items: center;
-    gap: 15px;
+    flex: 0 0 auto;
+    gap: 48px;
+    padding: 0 48px 0 0;
+    margin: 0;
+    list-style: none;
 }
 
-.tool-card:hover {
-    border-color: var(--primary-red);
-    transform: translateY(-5px);
+.tools-section .tool-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 96px;
+    width: 96px;
+    height: 96px;
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    transition: transform 0.28s ease, border-color 0.28s ease,
+        background-color 0.28s ease, box-shadow 0.28s ease;
 }
 
-.tool-card i {
-    font-size: 32px;
-    color: var(--primary-red);
+.tools-section .tool-card img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    opacity: 0.7;
+    transition: opacity 0.25s ease;
 }
 
-.tool-card span {
-    font-size: 14px;
-    color: var(--text-white);
-    font-weight: 500;
+.tools-section .tool-card:hover {
+    transform: scale(1.12);
+    background: rgba(255, 255, 255, 0.035);
+    border-color: rgba(var(--tool-color), 0.33);
+    box-shadow: 0 10px 25px -8px rgba(var(--tool-color), 0.2);
+}
+
+.tools-section .tool-card:hover img {
+    opacity: 1;
+}
+
+.tools-marquee:hover .tools-marquee-track,
+.tools-marquee:focus-within .tools-marquee-track {
+    animation-play-state: paused;
+}
+
+/* Three identical groups, each with a trailing gap: move one complete sequence. */
+@keyframes tools-marquee-scroll {
+    to { transform: translateX(calc(-100% / 3)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tools-marquee {
+        overflow-x: auto;
+        mask-image: none;
+    }
+
+    .tools-marquee-track {
+        animation: none;
+    }
+
+    .tools-marquee-group[aria-hidden="true"] {
+        display: none;
+    }
+
+    .tools-section .tool-card,
+    .tools-section .tool-card img {
+        transition: none;
+    }
+
+    .tools-section .tool-card:hover {
+        transform: none;
+    }
 }
 
 .services {
@@ -1409,10 +1470,6 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
     
-    .tools-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
     .about-wrapper {
         grid-template-columns: 1fr;
     }
@@ -1479,10 +1536,6 @@ body {
     
     .services-grid {
         grid-template-columns: 1fr;
-    }
-    
-    .tools-grid {
-        grid-template-columns: repeat(2, 1fr);
     }
     
     .filter-tabs {
