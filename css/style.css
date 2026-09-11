@@ -344,6 +344,46 @@ body {
     transform: translateY(-2px);
 }
 
+.btn.btn-collaborate {
+    padding: 8px 24px 8px 8px;
+    max-width: 100%;
+    border: 1px solid #3a3a3a;
+    border-radius: 999px;
+    background: #111111;
+    color: #ffffff;
+    font-weight: 700;
+    gap: 12px;
+    transition: background-color 0.28s ease, border-color 0.28s ease,
+        box-shadow 0.28s ease, transform 0.28s ease;
+}
+
+.btn-collaborate .collaborate-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #111111;
+    font-size: 16px;
+    transition: background-color 0.28s ease, color 0.28s ease;
+}
+
+.btn.btn-collaborate:hover,
+.btn.btn-collaborate:focus-visible {
+    background: var(--primary-red);
+    border-color: var(--primary-red);
+    box-shadow: 0 6px 20px rgba(255, 59, 59, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn-collaborate:hover .collaborate-icon,
+.btn-collaborate:focus-visible .collaborate-icon {
+    background: #ff946b;
+}
+
 .featured-banner {
     background: var(--bg-section);
     padding: 20px 0;
