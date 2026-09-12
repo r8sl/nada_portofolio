@@ -686,7 +686,7 @@ body {
 .tools-marquee-track {
     display: flex;
     width: max-content;
-    animation: tools-marquee-scroll 25s linear infinite;
+    animation: tools-marquee-scroll 31.25s linear infinite;
 }
 
 .tools-marquee-group {
@@ -733,8 +733,7 @@ body {
     opacity: 1;
 }
 
-.tools-marquee:hover .tools-marquee-track,
-.tools-marquee:focus-within .tools-marquee-track {
+.tools-marquee:hover .tools-marquee-track {
     animation-play-state: paused;
 }
 
