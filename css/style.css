@@ -1,5 +1,5 @@
 /* ==========================================
-   MOIZ - VIDEO EDITOR PORTFOLIO 2026
+   NADA - MULTIMEDIA DESIGNER PORTFOLIO 2026
    Modern, Full-Length Portfolio Design
    ========================================== */
 
@@ -159,7 +159,7 @@ body {
 }
 
 .hero::before {
-    content: 'MOTION';
+    content: 'VISUALS';
     position: absolute;
     top: 50%;
     left: 50%;

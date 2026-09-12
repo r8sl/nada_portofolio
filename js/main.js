@@ -1,6 +1,6 @@
 /**
  * ========================================
- * VIDEO EDITOR PORTFOLIO 2026
+ * MULTIMEDIA DESIGNER PORTFOLIO 2026
  * Interactive features and timeline
  * ========================================
  */
@@ -133,6 +133,8 @@ function initPortfolioFilter() {
         all: 'design projects',
         posters: 'poster projects',
         logos: 'logo projects',
+        'photography-retouching': 'photography or retouching projects',
+        'interior-3d': 'interior or 3D projects',
         'ai-generative': 'AI generative projects'
     };
     let projectType = 'video';

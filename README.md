@@ -1,10 +1,10 @@
-# Nada Mujahed Tawfeek - Video Editor Portfolio
+# Nada Mujahed Tawfeek - Multimedia Designer & Visual Creator
 
-A modern, interactive portfolio website showcasing video editing and motion design work with a unique video editor-inspired timeline interface.
+A modern, interactive portfolio website showcasing multidisciplinary visual design, video, animation, branding, photography, and architectural visualization with a unique video editor-inspired timeline interface.
 
 ## 🎯 Project Overview
 
-This portfolio website is designed for Nada Mujahed Tawfeek, a professional video editor and motion designer, to showcase his creative work through an immersive and interactive experience. The site features a bottom timeline bar that allows visitors to navigate through the portfolio smoothly, inspired by video editing software interfaces.
+This portfolio website is designed for Nada Mujahed Tawfeek, a Multimedia Designer & Visual Creator, to showcase her creative work through an immersive and interactive experience. The site features a bottom timeline bar that allows visitors to navigate through the portfolio smoothly, inspired by video editing software interfaces.
 
 ## 🛠️ Tech Stack
 
@@ -37,7 +37,7 @@ nada_portofolio/
 
 ## 🚀 Why This Project?
 
-This portfolio was created to provide a unique, engaging way for Nada Mujahed Tawfeek to present his video editing work to potential clients. The timeline interface reflects his profession while offering an intuitive navigation experience that sets him apart from traditional portfolio websites.
+This portfolio was created to provide a unique, engaging way for Nada Mujahed Tawfeek to present her multimedia design work to potential clients. The timeline interface supports exploration of her creative work while offering an intuitive navigation experience that sets her apart from traditional portfolio websites.
 
 ---
 
