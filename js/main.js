@@ -13,7 +13,6 @@ const elements = {
     modalBack: document.querySelector('.modal-back'),
     portfolioCards: document.querySelectorAll('.portfolio-card'),
     playBtns: document.querySelectorAll('.play-btn'),
-    filterBtns: document.querySelectorAll('.filter-btn'),
     playhead: document.getElementById('playhead'),
     timelineBar: document.querySelector('.timeline-bar'),
     contactForm: document.getElementById('contactForm'),
@@ -123,26 +122,65 @@ function initPortfolioPosters() {
     });
 }
 function initPortfolioFilter() {
-    elements.filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Update active button
-            elements.filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            const filter = btn.dataset.filter;
-            
-            // Filter portfolio items
-            elements.portfolioCards.forEach(card => {
-                if (filter === 'all' || card.dataset.category === filter) {
-                    card.style.display = 'block';
-                    setTimeout(() => card.classList.add('fade-in'), 10);
-                } else {
-                    card.style.display = 'none';
-                    card.classList.remove('fade-in');
-                }
-            });
+    const portfolio = document.getElementById('portfolio');
+    const typeButtons = portfolio.querySelectorAll('[data-project-type].filter-btn');
+    const categoryButtons = portfolio.querySelectorAll('[data-design-filter]');
+    const designTabs = portfolio.querySelector('.design-tabs');
+    const grid = portfolio.querySelector('.portfolio-grid');
+    const emptyState = portfolio.querySelector('.portfolio-empty');
+    const cards = [...portfolio.querySelectorAll('.portfolio-card')];
+    const categoryNames = {
+        all: 'design projects',
+        posters: 'poster projects',
+        logos: 'logo projects',
+        'ai-generative': 'AI generative projects'
+    };
+    let projectType = 'video';
+    let designFilter = 'all';
+
+    function render(animate = true) {
+        typeButtons.forEach(button => {
+            const selected = button.dataset.projectType === projectType;
+            button.classList.toggle('active', selected);
+            button.setAttribute('aria-pressed', String(selected));
         });
-    });
+        categoryButtons.forEach(button => {
+            const selected = button.dataset.designFilter === designFilter;
+            button.classList.toggle('active', selected);
+            button.setAttribute('aria-pressed', String(selected));
+        });
+        designTabs.hidden = projectType !== 'design';
+        const matchingCards = cards.filter(card =>
+            card.dataset.projectType === projectType &&
+            (projectType === 'video' || designFilter === 'all' || card.dataset.category === designFilter)
+        );
+        cards.forEach(card => {
+            card.hidden = !matchingCards.includes(card);
+        });
+        grid.hidden = matchingCards.length === 0;
+        emptyState.hidden = matchingCards.length > 0;
+        emptyState.textContent = matchingCards.length ? '' :
+            'No ' + (projectType === 'design' ? categoryNames[designFilter] : 'video projects') + ' to display yet.';
+
+        if (animate && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            const target = matchingCards.length ? grid : emptyState;
+            target.getAnimations().forEach(animation => animation.cancel());
+            target.animate(
+                [{ opacity: 0, transform: 'translateY(8px)' }, { opacity: 1, transform: 'translateY(0)' }],
+                { duration: 220, easing: 'ease-out' }
+            );
+        }
+    }
+
+    typeButtons.forEach(button => button.addEventListener('click', () => {
+        projectType = button.dataset.projectType;
+        render();
+    }));
+    categoryButtons.forEach(button => button.addEventListener('click', () => {
+        designFilter = button.dataset.designFilter;
+        render();
+    }));
+    render(false);
 }
 
 // ========================================
@@ -277,7 +315,6 @@ function init() {
     elements.modalBack = document.querySelector('.modal-back');
     elements.portfolioCards = document.querySelectorAll('.portfolio-card');
     elements.playBtns = document.querySelectorAll('.play-btn');
-    elements.filterBtns = document.querySelectorAll('.filter-btn');
     elements.playhead = document.getElementById('playhead');
     elements.timelineBar = document.querySelector('.timeline-bar');
     elements.contactForm = document.getElementById('contactForm');

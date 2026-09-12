@@ -72,10 +72,6 @@
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <span>Scroll Down</span>
-            <div class="scroll-line"></div>
-        </div>
     </section>
 
     <!-- Featured Work Banner -->
@@ -97,26 +93,30 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
         <div class="container">
-            <div class="section-header">
-                <span class="section-label">MY WORK</span>
-                <h2 class="section-title">Recent Projects</h2>
-                <p class="section-description">
-                    A curated selection of my best work in video editing, motion design, and creative storytelling
-                </p>
+            <div class="portfolio-header">
+                <div class="section-header">
+                    <span class="section-label">MY WORK</span>
+                    <h2 class="section-title">Recent Projects</h2>
+                    <p class="section-description">
+                        A curated selection of my best work in video editing, motion design, and creative storytelling
+                    </p>
+                </div>
+                <div class="filter-tabs project-tabs" role="group" aria-label="Project type">
+                    <button type="button" class="filter-btn active" data-project-type="video" aria-pressed="true" aria-controls="project-grid">VIDEOS</button>
+                    <button type="button" class="filter-btn" data-project-type="design" aria-pressed="false" aria-controls="project-grid">DESIGNS</button>
+                </div>
             </div>
 
-            <!-- Filter Tabs -->
-            <div class="filter-tabs" style="display:none;">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="commercial">Commercial</button>
-                <button class="filter-btn" data-filter="motion">Motion Graphics</button>
-                <button class="filter-btn" data-filter="social">Social Media</button>
-                <button class="filter-btn" data-filter="cinematic">Cinematic</button>
+            <div class="filter-tabs design-tabs" role="group" aria-label="Design category" hidden>
+                <button type="button" class="filter-btn active" data-design-filter="all" aria-pressed="true" aria-controls="project-grid">ALL</button>
+                <button type="button" class="filter-btn" data-design-filter="posters" aria-pressed="false" aria-controls="project-grid">POSTERS</button>
+                <button type="button" class="filter-btn" data-design-filter="logos" aria-pressed="false" aria-controls="project-grid">LOGOS</button>
+                <button type="button" class="filter-btn" data-design-filter="ai-generative" aria-pressed="false" aria-controls="project-grid">AI GENERATIVE</button>
             </div>
 
             <!-- Portfolio Grid -->
-            <div class="portfolio-grid">
-                <div class="portfolio-card" data-category="all">
+            <div class="portfolio-grid" id="project-grid">
+                <div class="portfolio-card" data-project-type="video" data-category="all">
                     <div class="card-image">
                         <img class="portfolio-poster" src="images/posters/1v13GyP412XYNvILkXz_AeaaTSuCzmi8x.jpg" alt="" decoding="async">
                         <div class="card-overlay">
@@ -132,7 +132,7 @@
                     </div>
                 </div>
 
-                <div class="portfolio-card" data-category="all">
+                <div class="portfolio-card" data-project-type="video" data-category="all">
                     <div class="card-image">
                         <img class="portfolio-poster" src="images/posters/13DRJN_w45uJ9V6M9Kfaa7dgarVfFLr8h.jpg" alt="" decoding="async">
                         <div class="card-overlay">
@@ -148,7 +148,7 @@
                     </div>
                 </div>
 
-                <div class="portfolio-card" data-category="all">
+                <div class="portfolio-card" data-project-type="video" data-category="all">
                     <div class="card-image">
                         <img class="portfolio-poster" src="images/posters/1g__rr6oLWf7BNfYNJDueiTSZXuS21QJe.jpg" alt="" decoding="async">
                         <div class="card-overlay">
@@ -164,7 +164,7 @@
                     </div>
                 </div>
 
-                <div class="portfolio-card" data-category="all">
+                <div class="portfolio-card" data-project-type="video" data-category="all">
                     <div class="card-image">
                         <img class="portfolio-poster" src="images/posters/1yVd3eUiA8sAr_J_3u162Z-eNIEg5NcDI.jpg" alt="" decoding="async">
                         <div class="card-overlay">
@@ -180,7 +180,7 @@
                     </div>
                 </div>
 
-                <div class="portfolio-card" data-category="all">
+                <div class="portfolio-card" data-project-type="video" data-category="all">
                     <div class="card-image">
                         <img class="portfolio-poster" src="images/posters/1LiBT54otOqsgQpD8kI6crcxSCLUfw12l.jpg" alt="" decoding="async">
                         <div class="card-overlay">
@@ -196,7 +196,7 @@
                     </div>
                 </div>
 
-                <div class="portfolio-card" data-category="all">
+                <div class="portfolio-card" data-project-type="video" data-category="all">
                     <div class="card-image">
                         <img class="portfolio-poster" src="images/posters/151OHTpFQS7Gbk9gZThbxEUtqO_3FGQY3.jpg" alt="" decoding="async">
                         <div class="card-overlay">
@@ -212,7 +212,7 @@
                     </div>
                 </div>
 
-                <div class="portfolio-card" data-category="all">
+                <div class="portfolio-card" data-project-type="video" data-category="all">
                     <div class="card-image">
                         <img class="portfolio-poster" src="images/posters/1mGD0uBFQkqnKmPezsQdkRdHQbTNinWsP.jpg" alt="" decoding="async">
                         <div class="card-overlay">
@@ -228,7 +228,7 @@
                     </div>
                 </div>
 
-                <div class="portfolio-card" data-category="all">
+                <div class="portfolio-card" data-project-type="video" data-category="all">
                     <div class="card-image">
                         <img class="portfolio-poster" src="images/posters/1DcdZ-RCCBSRT4X1o3bfQm64TtfgdQEIy.jpg" alt="" decoding="async">
                         <div class="card-overlay">
@@ -244,7 +244,7 @@
                     </div>
                 </div>
 
-                <div class="portfolio-card" data-category="all">
+                <div class="portfolio-card" data-project-type="video" data-category="all">
                     <div class="card-image">
                         <img class="portfolio-poster" src="images/posters/161NUDTBoLbhYwNhMw6Mpx3Qc-EmF5nbJ.jpg" alt="" decoding="async">
                         <div class="card-overlay">
@@ -260,7 +260,7 @@
                     </div>
                 </div>
 
-                <div class="portfolio-card" data-category="all">
+                <div class="portfolio-card" data-project-type="video" data-category="all">
                     <div class="card-image">
                         <img class="portfolio-poster" src="images/posters/1Tpl7Ke0YXLiyC8ulonG4phOBCJyZlLSY.jpg" alt="" decoding="async">
                         <div class="card-overlay">
@@ -276,7 +276,7 @@
                     </div>
                 </div>
 
-                <div class="portfolio-card" data-category="all">
+                <div class="portfolio-card" data-project-type="video" data-category="all">
                     <div class="card-image">
                         <img class="portfolio-poster" src="images/posters/1xe6sl9tgY9rMn6WXpAUCI_I07yszmUc1.jpg" alt="" decoding="async">
                         <div class="card-overlay">
@@ -292,6 +292,8 @@
                     </div>
                 </div>
             </div>
+
+            <p class="portfolio-empty" role="status" aria-live="polite" hidden></p>
 
             <div class="portfolio-cta" style="display:none;">
                 <button class="btn btn-primary">Load More Projects</button>

@@ -152,7 +152,7 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 120px 0 140px;
+    padding: 120px 0 60px;
     background: linear-gradient(135deg, var(--bg-dark) 0%, #1a0a0a 100%);
     position: relative;
     overflow: hidden;
@@ -285,32 +285,6 @@ body {
     font-size: 14px;
     color: var(--text-gray);
     margin-top: 5px;
-}
-
-.scroll-indicator {
-    position: absolute;
-    bottom: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    animation: bounce 2s infinite;
-}
-
-.scroll-indicator i {
-    font-size: 24px;
-    color: var(--text-gray);
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateX(-50%) translateY(0);
-    }
-    40% {
-        transform: translateX(-50%) translateY(-10px);
-    }
-    60% {
-        transform: translateX(-50%) translateY(-5px);
-    }
 }
 
 .hero-profile {
@@ -475,25 +449,68 @@ body {
     background: var(--bg-dark);
 }
 
+.portfolio-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 40px;
+}
+
+.portfolio-header .section-header {
+    min-width: 0;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.portfolio-header .section-description {
+    margin: 0;
+}
+
 .filter-tabs {
     display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 50px;
+    gap: 8px;
     flex-wrap: wrap;
+}
+
+.project-tabs {
+    flex-shrink: 0;
+}
+
+.design-tabs {
+    margin-bottom: 24px;
+}
+
+.portfolio [hidden] {
+    display: none !important;
+}
+
+.portfolio-empty {
+    padding: 48px 20px;
+    margin-bottom: 50px;
+    border: 1px solid var(--border-gray);
+    background: var(--bg-section);
+    color: var(--text-gray);
+    text-align: center;
 }
 
 .filter-btn {
     padding: 10px 25px;
-    background: transparent;
+    background: var(--bg-section);
     border: 1px solid var(--border-gray);
     color: var(--text-gray);
-    border-radius: 50px;
+    border-radius: 0;
+    text-transform: uppercase;
     cursor: pointer;
     font-size: 14px;
     font-weight: 500;
     transition: var(--transition-smooth);
     font-family: var(--font-secondary);
+}
+
+.filter-btn:focus-visible {
+    outline: 2px solid var(--primary-red);
+    outline-offset: 3px;
 }
 
 .filter-btn:hover,
@@ -1462,6 +1479,11 @@ body {
 }
 
 @media (max-width: 968px) {
+    .portfolio-header {
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
     .hero-container,
     .featured-banner > .container {
         padding: 0 32px;
