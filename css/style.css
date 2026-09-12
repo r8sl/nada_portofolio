@@ -386,11 +386,12 @@ body {
 .section-label {
     display: inline-block;
     color: var(--primary-red);
-    font-size: 12px;
+    font-size: 18px;
     font-weight: 700;
-    letter-spacing: 3px;
+    letter-spacing: 0.18em;
+    line-height: 1.4;
     text-transform: uppercase;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .section-title {
@@ -1447,6 +1448,10 @@ body {
 }
 
 @media (max-width: 968px) {
+    .section-label {
+        font-size: 16px;
+    }
+
     .portfolio-header {
         flex-wrap: wrap;
         gap: 24px;
@@ -1525,6 +1530,10 @@ body {
 }
 
 @media (max-width: 640px) {
+    .section-label {
+        font-size: 14px;
+    }
+
     .hero-container {
         padding: 0 20px;
     }
