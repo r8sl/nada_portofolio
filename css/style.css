@@ -172,8 +172,7 @@ body {
     font-family: var(--font-primary);
 }
 
-.hero-container,
-.featured-banner > .container {
+.hero-container {
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
@@ -382,36 +381,6 @@ body {
 .btn-collaborate:hover .collaborate-icon,
 .btn-collaborate:focus-visible .collaborate-icon {
     background: #ff946b;
-}
-
-.featured-banner {
-    background: var(--bg-section);
-    padding: 48px 0;
-    border-top: 1px solid var(--border-gray);
-    border-bottom: 1px solid var(--border-gray);
-}
-
-.featured-banner h2 {
-    margin-bottom: 24px;
-}
-
-.brand-logos {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    flex-wrap: wrap;
-}
-
-.brand {
-    font-size: 14px;
-    color: var(--text-gray);
-    font-weight: 600;
-    letter-spacing: 2px;
-    transition: var(--transition-smooth);
-}
-
-.brand:hover {
-    color: var(--text-white);
 }
 
 .section-label {
@@ -1483,8 +1452,7 @@ body {
         gap: 24px;
     }
 
-    .hero-container,
-    .featured-banner > .container {
+    .hero-container {
         padding: 0 32px;
     }
 
@@ -1557,8 +1525,7 @@ body {
 }
 
 @media (max-width: 640px) {
-    .hero-container,
-    .featured-banner > .container {
+    .hero-container {
         padding: 0 20px;
     }
 
